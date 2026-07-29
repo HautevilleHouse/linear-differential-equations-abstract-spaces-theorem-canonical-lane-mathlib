@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.LinearDifferentialEquationsAbstractSpacesTheoremCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.LinearDifferentialEquationsAbstractSpacesTheoremCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace LinearDifferentialEquationsAbstractSpacesTheoremCanonicalLaneLean
+
+def ConstrainedLinearDifferentialEquationsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_linear_differential_equations_endgame (A : AdmissibleClass) :
+    ConstrainedLinearDifferentialEquationsClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end LinearDifferentialEquationsAbstractSpacesTheoremCanonicalLaneLean
+end HautevilleHouse
